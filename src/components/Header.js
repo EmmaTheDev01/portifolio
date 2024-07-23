@@ -7,7 +7,6 @@ const Header = ({ mode, toggleMode }) => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <img src="/logo.png" alt="Logo" className="h-8" />
-          <h1 className="text-xl font-bold">Portfolio</h1>
         </div>
         <ToggleButton mode={mode} toggleMode={toggleMode} />
       </div>
