@@ -45,13 +45,13 @@ const Hero = ({ mode }) => {
 
       {/* Social Icons */}
       <div className="mt-6 md:mt-8 flex justify-center space-x-4 text-md sm:text-3xl md:text-4xl lg:text-2xl">
-        <a href="https://github.com/emmanuelhabumugisha" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/EmmaTheDev01" target="_blank" rel="noopener noreferrer">
           <FaGithub className="hover:text-gray-600 transition-colors duration-300" />
         </a>
-        <a href="https://twitter.com/emmanuel_habumugisha" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/cybereazon" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="hover:text-gray-600 transition-colors duration-300" />
         </a>
-        <a href="https://www.linkedin.com/in/emmanuel-habumugisha/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/emma-habumugisha-133a231b9/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="hover:text-gray-600 transition-colors duration-300" />
         </a>
       </div>
