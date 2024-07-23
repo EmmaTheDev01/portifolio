@@ -14,7 +14,6 @@ const Story = ({ mode }) => {
     { id: 4, text: "From there, my journey with computers evolved into a quest for knowledge and innovation. I immersed myself in learning new languages, exploring algorithms, and tackling real-world problems through software development." },
     { id: 5, text: "Each line of code became a story waiting to unfold, each bug a puzzle to solve. With every project completed, my skills grew, and so did my passion for creating impactful technology solutions." },
     { id: 6, text: "Today, as I reflect on my journey, I am grateful for the early inspiration that set me on this path. It has shaped not only my career but also my perspective on what is possible with dedication, creativity, and a love for computers." }
-    // Feel free to add more stories or expand further as needed
   ];
   
 
@@ -60,7 +59,7 @@ const Story = ({ mode }) => {
         <h1 className={`text-4xl md:text-6xl font-bold mb-4 ${isTypingAnimationComplete ? 'opacity-100' : 'opacity-0'}`} style={{ transition: 'opacity 1s ease-out' }}>Stories of My Journey</h1>
         <div ref={storiesContainerRef} className="max-w-full h-full overflow-x-auto scrollbar-hidden flex">
           {stories.map((story, index) => (
-            <div key={story.id} className={` flex-none w-full h-full`}>
+            <div key={story.id} className={` flex-none w-full h-full mt-10`}>
               <p className={`typewriter ${currentStoryIndex === index && isTypingAnimationComplete ? 'typewriter-animation' : ''}text-lg leading-relaxed mx-auto max-w-3xl mt-8 bg-opacity-40 backdrop-blur-l`}>
                 {story.text}
               </p>
