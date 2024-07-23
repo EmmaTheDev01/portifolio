@@ -1,0 +1,31 @@
+/* Add styles for absolute positioning on hover */
+.projects-container {
+    position: relative;
+    transition: position 0.3s ease;
+}
+
+.projects-container:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+/* Smooth scrolling effect */
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+/* Ensure that the container has a solid background color */
+.project-image-container {
+    position: relative;
+    background-color: white;
+    /* Adjust this as needed */
+}
+
+/* Blend mode to effectively remove the background */
+.project-image {
+    mix-blend-mode: multiply;
+}

@@ -1,7 +1,7 @@
 .typewriter {
     overflow: hidden; 
-   
-    white-space: wrap; 
+    border-right: .15em solid rgb(83, 13, 100);
+    white-space: nowrap; 
     margin: 0 auto;
     letter-spacing: .15em; 
     animation: 
@@ -22,8 +22,9 @@
   
   /* The typewriter cursor effect */
   @keyframes blink-caret {
-    from, to { border-color: transparent }
+    from, to 50%{ border-color: rgb(83, 13, 100) }
     
   }
+
   
   

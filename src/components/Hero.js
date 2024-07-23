@@ -1,31 +1,63 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Example icons from React Icons
+import './story.css';
 
 const Hero = ({ mode }) => {
+  const [dragging, setDragging] = useState(false);
+  const dragItem = useRef();
+  const dragNode = useRef();
+
+  const handleDragStart = (e, index) => {
+    dragItem.current = index;
+    dragNode.current = e.target;
+    dragNode.current.addEventListener('dragend', handleDragEnd);
+    setTimeout(() => {
+      setDragging(true);
+    }, 0);
+  };
+
+  const handleDragEnter = (e, index) => {
+    if (dragNode.current !== e.target) {
+      const currentItem = dragItem.current;
+      // Swap items in your stories array or update state accordingly
+      // Example: update state to reorder stories
+    }
+  };
+
+  const handleDragEnd = () => {
+    setDragging(false);
+    dragItem.current = null;
+    dragNode.current.removeEventListener('dragend', handleDragEnd);
+  };
+
   return (
-    <div className={`min-h-screen flex flex-col justify-center items-center ${mode === 'dark' ? 'bg-slate-800 text-white' : 'bg-white text-gray-800'}`}>
-      
+    <div className={`min-h-screen flex flex-col justify-center items-center ${mode === 'dark' ? 'bg-slate-800 text-white' : 'bg-white text-gray-800'} px-4 md:px-8 lg:px-16`}>
+
       {/* Hero Content */}
-      <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-pulse">Emmanuel Habumugisha</h1>
-        <p className="text-lg md:text-xl font-bold animate-pulse">Frontend Developer & Designer</p>
+      <div className="text-center p-3">
+        <h1 className="text-2xl sm:text-2xl md:text-5xl lg:text-6xl font-bold mb-4 animate-pulse typewriter typewriter-animation">
+          Emmanuel Habumugisha
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl font-bold animate-pulse">
+          Frontend Developer & Designer
+        </p>
       </div>
-      
+
       {/* Social Icons */}
-      <div className="mt-8 flex justify-center space-x-4">
+      <div className="mt-6 md:mt-8 flex justify-center space-x-4 text-md sm:text-3xl md:text-4xl lg:text-2xl">
         <a href="https://github.com/emmanuelhabumugisha" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="text-2xl md:text-3xl hover:text-gray-600" />
+          <FaGithub className="hover:text-gray-600 transition-colors duration-300" />
         </a>
         <a href="https://twitter.com/emmanuel_habumugisha" target="_blank" rel="noopener noreferrer">
-          <FaTwitter className="text-2xl md:text-3xl hover:text-gray-600" />
+          <FaTwitter className="hover:text-gray-600 transition-colors duration-300" />
         </a>
         <a href="https://www.linkedin.com/in/emmanuel-habumugisha/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="text-2xl md:text-3xl hover:text-gray-600" />
+          <FaLinkedin className="hover:text-gray-600 transition-colors duration-300" />
         </a>
       </div>
-      
+
       {/* Button to Start Journey */}
-      <button className="mt-8 px-6 py-3 bg-transparent hover:bg-purple-800 text-purple-800 hover:text-white text-lg font-semibold border-2 border-purple-800 rounded-md shadow-md transition-colors duration-300">
+      <button className="mt-6 md:mt-8 px-4 py-2 sm:px-6 sm:py-3 bg-transparent hover:bg-purple-800 text-purple-800 hover:text-white text-base sm:text-lg font-semibold border-2 border-purple-800 rounded-md shadow-md transition-colors duration-300">
         Start Journey
       </button>
     </div>
